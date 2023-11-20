@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'handlee';
+    src: url('../fonts/handlee-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+:root{
+    --header-size: 60px;
+    --font-clr-main: rgb(219, 122, 77);
+    --main-font-size: 20px;
+}
+
+
+
+body{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+main{
+    font-family: 'handlee';
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+.content-box{
+    position: absolute;
+    width: 80vw;
+    height: 100vh;
+    z-index: -1;
+    background-color: rgba(255, 218, 185, 0.781);
+    opacity: 30%;
+    box-shadow: inset 0px 0px 40px 40px #eb823cd7;
+}
+
+.background > img{
+    position: absolute;
+    z-index: -1;
+    top:-10px;
+    left: -10px;
+    width: 102vw;
+    height: 102vh;
+    object-fit: cover;
+    filter: blur(4px) brightness(0.6);
+}
+.title{
+    display: flex;
+    justify-self: center;
+    height: fit-content;
+    font-size: var(--header-size);
+    color: var(--font-clr-main);
+    font-weight: 900;
+    margin-top: 35px;
+    text-shadow: 10px 2px 20px black;
+}
+.book-list{
+    width: 80%;
+}
+ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.4fr 0.5fr 0.5fr;
+    font-size: var(--main-font-size);
+}
+ul > li{
+    border: 1px solid black;
+}
+
+.book-form{
+    border: 2px dashed slateblue;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    position: absolute;
+    top: 500px;
+    /* display: none; */
+}
+
+
+
