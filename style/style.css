@@ -7,7 +7,9 @@
 :root{
     --header-size: 60px;
     --font-clr-main: rgb(219, 122, 77);
-    --main-font-size: 20px;
+    --form-font-size: 20px;
+    --form-title-font-size: 40px;
+    --form-background-clr:rgba(233, 113, 57, 0.589);
 }
 
 
@@ -69,13 +71,31 @@ ul > li{
 }
 
 .book-form{
-    border: 2px dashed slateblue;
+    background-color: var(--form-background-clr);
+    padding:30px;
     display: flex;
     flex-direction: column;
     justify-self: center;
     position: absolute;
-    top: 500px;
+    top: 300px;
+    gap:30px;
+    border-radius: 10px;
     /* display: none; */
+}
+.input-window{
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--form-font-size);
+    font-weight: 800;
+}
+input{
+    width: 50%;
+    display: flex;;
+}
+.book-form > p{
+ text-align: center;
+ font-size: var(--form-title-font-size);
+ font-weight: 800;
 }
 
 

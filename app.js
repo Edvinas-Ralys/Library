@@ -15,6 +15,14 @@ function clearForm(array){
     array.map(variable => variable.value = ``)
 }
 
+function checkForEmptyBooks(){
+
+}
+
+
+function checkRequiredField(){
+
+}
 
 function Book(title, author, pages, date, read){
     this.title = title,
@@ -24,8 +32,21 @@ function Book(title, author, pages, date, read){
     this.read = read;
 };
 
+const bookForm = document.querySelector(`.book-form`)
+
+const openForm = document.querySelector(`.add-book`);
+openForm.addEventListener(`click`, () => {
+    bookForm.style.display = `flex`;
+    console.log(`works open form`)
+})
+
+
+const resetForm = document.querySelector(`.rest-book-form`);
+
+
 const addBookButton = document.querySelector(`.add-book-button`);
 addBookButton.addEventListener(`click`, () => {
+    console.log(`submit works`)
     book = new Book(
         bookTitle.value,
         bookAuthor.value,
@@ -33,17 +54,14 @@ addBookButton.addEventListener(`click`, () => {
         bookDate.value,
         haveRead.checked
     )
-    clearForm(bookVariable)
     bookLibrary.push(book)
+    // bookForm.style.display = `none`
+    // clearForm(bookVariable)
     console.log(bookLibrary)
 });
 
 
-const enterForm = document.querySelector(`.add-book`);
-enterForm.addEventListener(`click`, () => {
-    bookForm.style.display = `flex`;
-    console.log(`works open form`)
-})
+
 
 
 

@@ -17,28 +17,31 @@
         <div class="title">Book library</div>
         <button class="add-book">Add book</button>
         <div class="book-form">
-            Add a new book!
-            <div class="book-title">
-                <label for="book-title">Title:</label>
-                <input type="text" id="book-title">
-            </div>
-            <div class="book-author">
-                <label for="book-author">Author:</label>
-                <input type="text" id="book-author">
-            </div>
-            <div class="pages">
-                <label for="book-pages">Pages:</label>
-                <input type="number" name="" id="book-pages">
-            </div>
-            <div class="book-date">
-                <label for="book-date">Release date:</label>
-                <input type="number" name="" id="book-date">
-            </div>
-            <div class="have-read">
-                <label for="have-read">Have read</label>
-                <input type="checkbox" name="" id="have-read">
-            </div>
-            <button class="add-book-button">Add</button>
+            <p>Add a new book!</p>
+            <form onsubmit="return false">
+                <div class="book-title input-window">
+                    <label for="book-title">Title:</label>
+                    <input type="text" id="book-title" required>
+                </div>
+                <div class="book-author input-window">
+                    <label for="book-author">Author:</label>
+                    <input type="text" id="book-author">
+                </div>
+                <div class="pages input-window">
+                    <label for="book-pages">Pages:</label>
+                    <input type="number" name="" id="book-pages">
+                </div>
+                <div class="book-date input-window">
+                    <label for="book-date">Release date:</label>
+                    <input type="number" name="" id="book-date">
+                </div>
+                <div class="have-read input-window">
+                    <label for="have-read">Have read</label>
+                    <input type="checkbox" name="" id="have-read">
+                </div>
+                <button class="add-book-button" type="submit">Add</button>
+                <button class="rest-book-form" type="reset">Clear</button>
+            </form>
 
         </div>
         <div class="book-list">
