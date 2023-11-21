@@ -64,6 +64,7 @@ main{
 ul{
     display: grid;
     grid-template-columns: 1fr 1fr 0.4fr 0.5fr 0.5fr;
+    grid-template-rows: auto;
     font-size: var(--main-font-size);
 }
 ul > li{
@@ -96,6 +97,17 @@ input{
  text-align: center;
  font-size: var(--form-title-font-size);
  font-weight: 800;
+}
+.icon-close{
+    position: absolute;
+    height: 25px;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+.read-of-book-display{
+    height: 30px;
+    width: 30px;
 }
 
 

@@ -17,6 +17,9 @@
         <div class="title">Book library</div>
         <button class="add-book">Add book</button>
         <div class="book-form">
+            <svg class="icon-close icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+            </svg>
             <p>Add a new book!</p>
             <form onsubmit="return false">
                 <div class="book-title input-window">
@@ -39,7 +42,7 @@
                     <label for="have-read">Have read</label>
                     <input type="checkbox" name="" id="have-read">
                 </div>
-                <button class="add-book-button" type="submit">Add</button>
+                <button class="add-book-button" >Add</button>
                 <button class="rest-book-form" type="reset">Clear</button>
             </form>
 
@@ -47,11 +50,11 @@
         <div class="book-list">
             <nav class="list-nav">
                 <ul>
-                    <li>Title</li>
-                    <li>Author</li>
-                    <li>Pages</li>
-                    <li>Release date</li>
-                    <li>Have read</li>
+                    <li class="title-list">Title</li>
+                    <li class="author-list">Author</li>
+                    <li class="pages-list">Pages</li>
+                    <li class="release-list">Release date</li>
+                    <li class="read-list">Have read</li>
                 </ul>
             </nav>
         </div>
