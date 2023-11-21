@@ -4,9 +4,20 @@
     font-weight: normal;
     font-style: normal;
 }
+
+
+
+@font-face {
+    font-family: 'copystruct';
+    src: url('../fonts/COPYN___-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 :root{
     --header-size: 60px;
-    --font-clr-main: rgb(219, 122, 77);
+    --font-clr-main: rgb(139, 120, 111);
     --form-font-size: 20px;
     --form-title-font-size: 40px;
     --form-background-clr:rgba(233, 113, 57, 0.589);
@@ -20,7 +31,7 @@ body{
     overflow: hidden;
 }
 main{
-    font-family: 'handlee';
+    font-family: 'copystruct';
     width: 80vw;
     height: 100vh;
     display: flex;
@@ -28,26 +39,7 @@ main{
     flex-direction: column;
     gap: 50px;
 }
-.content-box{
-    position: absolute;
-    width: 80vw;
-    height: 100vh;
-    z-index: -1;
-    background-color: rgba(255, 218, 185, 0.781);
-    opacity: 30%;
-    box-shadow: inset 0px 0px 40px 40px #eb823cd7;
-}
 
-.background > img{
-    position: absolute;
-    z-index: -1;
-    top:-10px;
-    left: -10px;
-    width: 102vw;
-    height: 102vh;
-    object-fit: cover;
-    filter: blur(4px) brightness(0.6);
-}
 .title{
     display: flex;
     justify-self: center;
@@ -56,19 +48,27 @@ main{
     color: var(--font-clr-main);
     font-weight: 900;
     margin-top: 35px;
-    text-shadow: 10px 2px 20px black;
+    text-shadow: 6px 2px 10px black;
+    user-select: none;
 }
 .book-list{
     width: 80%;
+    display: flex;
+    flex-direction: column;
 }
 ul{
     display: grid;
-    grid-template-columns: 1fr 1fr 0.4fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
     grid-template-rows: auto;
     font-size: var(--main-font-size);
+    height: 35px;
+
 }
-ul > li{
-    border: 1px solid black;
+li{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dashed black;
 }
 
 .book-form{
@@ -106,8 +106,20 @@ input{
     cursor: pointer;
 }
 .read-of-book-display{
-    height: 30px;
-    width: 30px;
+    height: 10px;
+    width: 10px;
+}
+li > *{
+    height: 15px;
+}
+
+.book-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
+}
+
+p[class*=`book-number`]{
+
 }
 
 

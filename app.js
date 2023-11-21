@@ -11,11 +11,12 @@ const haveRead = document.getElementById(`have-read`)
 const bookVariable = [bookTitle, bookAuthor, bookPages, bookDate, haveRead]
 
 
-//Clears form after closing or adding
+//Clears form after closing or adding book
 function clearForm(array){
     haveRead.checked = false
     array.map(variable => variable.value = ``)
 }
+const bookArea = document.querySelector(`.book-content`)
 
 const titleOfBookList = document.querySelector(`.title-list`)
 const authorOfBookList = document.querySelector(`.author-list`)
@@ -24,28 +25,47 @@ const releaseOfBookList = document.querySelector(`.release-list`)
 const readOfBookList = document.querySelector(`.read-list`)
 
 function displayBooks(array){
+    const bookElemet = document.createElement(`div`)
+    bookElemet.classList.add(`book-number${bookLibrary.length}`)
+    bookArea.appendChild(bookElemet)
+
     const titleOfBookDisplay = document.createElement(`div`);
     titleOfBookDisplay.classList.add(`title-of-book-display`);
-    titleOfBookList.appendChild(titleOfBookDisplay);
+    bookElemet.appendChild(titleOfBookDisplay);
 
     const authorOfBookDisplay = document.createElement(`div`);
     authorOfBookDisplay.classList.add(`author-of-book-display`);
-    authorOfBookList.appendChild(authorOfBookDisplay)
+    bookElemet.appendChild(authorOfBookDisplay)
 
     const pagesOfBookDisplay = document.createElement(`div`);
     pagesOfBookDisplay.classList.add(`pages-of-book-display`);
-    pagesOfBookList.appendChild(pagesOfBookDisplay)
+    bookElemet.appendChild(pagesOfBookDisplay)
 
     const releaseOfBookDisplay = document.createElement(`div`)
     releaseOfBookDisplay.classList.add(`release-of-book-display`)
-    releaseOfBookList.appendChild(releaseOfBookDisplay)
+    bookElemet.appendChild(releaseOfBookDisplay)
+
+
 
     const readOfBookDisplay = document.createElement(`div`);
-    readOfBookDisplay.classList.add(`read-of-book-display`)
-    readOfBookList.appendChild(readOfBookDisplay)
+    readOfBookDisplay.classList.add(`read-of-book-display`);
+    readOfBookDisplay.addEventListener(`click`, ()=>{
+        if(readOfBookDisplay.style.cssText == "background-color: green;"){
+            readOfBookDisplay.style.cssText = "background-color: red;"
+        }
+        else if(readOfBookDisplay.style.cssText == "background-color: red;"){
+            readOfBookDisplay.style.cssText = "background-color: green;"
+        }
+    })
+    bookElemet.appendChild(readOfBookDisplay)
+
+    const removeBook = document.createElement(`button`)
+    removeBook.classList.add(`remove-button${bookLibrary.length}`)
+    removeBook.textContent = `Remove`
+    bookElemet.appendChild(removeBook)
 
     array.map(book =>
-        titleOfBookDisplay.innerHTML = book.title,
+        titleOfBookDisplay.textContent = book.title,
         authorOfBookDisplay.textContent = book.author,
         pagesOfBookDisplay.textContent = book.pages,
         releaseOfBookDisplay.textContent = book.date,
@@ -91,7 +111,6 @@ addBookButton.addEventListener(`click`, () => {
         bookForm.style.display = `none`
         clearForm(bookVariable)
     }
-    console.log(bookLibrary)
 });
 
 const closeForm = document.querySelector(`.icon-close`);
