@@ -1,126 +1,113 @@
 @font-face {
-    font-family: 'handlee';
-    src: url('../fonts/handlee-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "handlee";
+  src: url("../fonts/handlee-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
-
-
 
 @font-face {
-    font-family: 'copystruct';
-    src: url('../fonts/COPYN___-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "copystruct";
+  src: url("../fonts/COPYN___-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-:root{
-    --header-size: 60px;
-    --font-clr-main: rgb(139, 120, 111);
-    --form-font-size: 20px;
-    --form-title-font-size: 40px;
-    --form-background-clr:rgba(233, 113, 57, 0.589);
+:root {
+  --header-size: 60px;
+  --font-clr-main: rgb(139, 120, 111);
+  --form-font-size: 20px;
+  --form-title-font-size: 40px;
+  --form-background-clr: rgba(233, 113, 57, 0.589);
 }
 
-
-
-body{
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
+body {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
-main{
-    font-family: 'copystruct';
-    width: 80vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 50px;
+main {
+  font-family: "copystruct";
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
 }
 
-.title{
-    display: flex;
-    justify-self: center;
-    height: fit-content;
-    font-size: var(--header-size);
-    color: var(--font-clr-main);
-    font-weight: 900;
-    margin-top: 35px;
-    text-shadow: 6px 2px 10px black;
-    user-select: none;
+.title {
+  display: flex;
+  justify-self: center;
+  height: fit-content;
+  font-size: var(--header-size);
+  color: var(--font-clr-main);
+  font-weight: 900;
+  margin-top: 35px;
+  text-shadow: 6px 2px 10px black;
+  user-select: none;
 }
-.book-list{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
+.book-list {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
 }
-ul{
-    display: grid;
-    grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
-    grid-template-rows: auto;
-    font-size: var(--main-font-size);
-    height: 35px;
-
+ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
+  grid-template-rows: auto;
+  font-size: var(--main-font-size);
+  height: 35px;
 }
-li{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px dashed black;
-}
-
-.book-form{
-    background-color: var(--form-background-clr);
-    padding:30px;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    position: absolute;
-    top: 300px;
-    gap:30px;
-    border-radius: 10px;
-    /* display: none; */
-}
-.input-window{
-    display: flex;
-    justify-content: space-between;
-    font-size: var(--form-font-size);
-    font-weight: 800;
-}
-input{
-    width: 50%;
-    display: flex;;
-}
-.book-form > p{
- text-align: center;
- font-size: var(--form-title-font-size);
- font-weight: 800;
-}
-.icon-close{
-    position: absolute;
-    height: 25px;
-    right: 8px;
-    top: 8px;
-    cursor: pointer;
-}
-.read-of-book-display{
-    height: 10px;
-    width: 10px;
-}
-li > *{
-    height: 15px;
+li {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px dashed black;
 }
 
-.book-content{
-    display: grid;
-    grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
+.book-form {
+  background-color: var(--form-background-clr);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  position: absolute;
+  top: 300px;
+  gap: 30px;
+  border-radius: 10px;
+  /* display: none; */
+}
+.input-window {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--form-font-size);
+  font-weight: 800;
+}
+input {
+  width: 50%;
+  display: flex;
+}
+.book-form > p {
+  text-align: center;
+  font-size: var(--form-title-font-size);
+  font-weight: 800;
+}
+.icon-close {
+  position: absolute;
+  height: 25px;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+.read-of-book-display {
+  height: 10px;
+  width: 10px;
+}
+li > * {
+  height: 15px;
 }
 
-p[class*=`book-number`]{
-
+.book-content > * {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
 }
-
-
-
