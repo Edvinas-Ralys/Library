@@ -60,7 +60,7 @@ function displayBooks(array) {
   bookElemet.appendChild(readOfBookDisplay);
 
   const removeBook = document.createElement(`button`);
-  removeBook.classList.add(`remove-button${bookLibrary.length}`);
+  removeBook.classList.add(`remove-button`);
   removeBook.textContent = `Remove`;
   bookElemet.appendChild(removeBook);
   removeBook.addEventListener(`click`, () => {

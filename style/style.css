@@ -49,13 +49,14 @@ main {
   width: 80%;
   display: flex;
   flex-direction: column;
+  gap: 30px;
 }
 ul {
   display: grid;
   grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
   grid-template-rows: auto;
   font-size: var(--main-font-size);
-  padding: 20px;
+  /* padding: 20px; */
   height: 35px;
 }
 li {
@@ -84,14 +85,17 @@ li {
 }
 .add-book:hover,
 .add-book-button:hover,
-.rest-book-form:hover {
+.rest-book-form:hover,
+.remove-button:hover {
   background-color: black;
   color: white;
   transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 .add-book:active,
 .add-book-button:active,
-.rest-book-form:active {
+.rest-book-form:active,
+.remove-button:active {
   transform: scale(0.9);
   transition: 0.1s ease-in-out;
 }
@@ -204,14 +208,51 @@ input {
   user-select: none;
 }
 
+.read-of-book-display {
+  height: 100%;
+  width: 30px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.read-of-book-display:hover {
+  opacity: 1;
+  transition: 0.2s ease-in-out;
+}
+
+.remove-button {
+  width: 70px;
+  background-color: white;
+  border: 1px dashed gray;
+  border-radius: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: gray;
+  opacity: 0.5;
+}
+
 li > * {
   height: 15px;
+}
+.book-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .book-content > * {
   display: grid;
   grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
+  height: fit-content;
 }
+.book-content > * > * {
+  display: flex;
+  justify-content: center;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
