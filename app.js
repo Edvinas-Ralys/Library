@@ -7,6 +7,10 @@ const bookAuthor = document.getElementById(`book-author`);
 const bookPages = document.getElementById(`book-pages`);
 const bookDate = document.getElementById(`book-date`);
 const haveRead = document.getElementById(`have-read`);
+const main = document.querySelector(`main`);
+const body = document.querySelector(`body`);
+const bookList = document.querySelector(`.book-list`);
+const title = document.querySelector(`.title`);
 
 const bookVariable = [bookTitle, bookAuthor, bookPages, bookDate, haveRead];
 
@@ -82,11 +86,11 @@ function Book(title, author, pages, date, read) {
     (this.read = read);
 }
 
-const bookForm = document.querySelector(`.book-form`);
+const bookForm = document.querySelector(`.book-form-pop`);
 
 const openForm = document.querySelector(`.add-book`);
 openForm.addEventListener(`click`, () => {
-  bookForm.style.display = `flex`;
+  bookForm.showModal();
   console.log(`works open form`);
 });
 
@@ -105,13 +109,30 @@ addBookButton.addEventListener(`click`, () => {
     displayBooks(bookLibrary);
   }
   if (!bookTitle.value == ``) {
-    bookForm.style.display = `none`;
+    bookForm.setAttribute(`closing`, "");
+    bookForm.addEventListener(
+      `animationend`,
+      () => {
+        bookForm.removeAttribute(`closing`);
+        bookForm.close();
+      },
+      { once: true }
+    );
     clearForm(bookVariable);
   }
 });
 
 const closeForm = document.querySelector(`.icon-close`);
 closeForm.addEventListener(`click`, () => {
-  bookForm.style.display = `none`;
+  bookForm.setAttribute(`closing`, "");
+  bookForm.addEventListener(
+    `animationend`,
+    () => {
+      bookForm.removeAttribute(`closing`);
+      bookForm.close();
+    },
+    { once: true }
+  );
+
   clearForm(bookVariable);
 });

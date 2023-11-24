@@ -14,10 +14,11 @@
 
 :root {
   --header-size: 60px;
-  --font-clr-main: rgb(139, 120, 111);
-  --form-font-size: 20px;
+  --font-clr-main: rgb(58, 58, 58);
+  --form-font-size: 15px;
   --form-title-font-size: 40px;
   --form-background-clr: rgba(233, 113, 57, 0.589);
+  --animation-duration: 0.2s;
 }
 
 body {
@@ -32,7 +33,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 50px;
+  /* gap: 70px; */
 }
 
 .title {
@@ -40,10 +41,8 @@ main {
   justify-self: center;
   height: fit-content;
   font-size: var(--header-size);
-  color: var(--font-clr-main);
-  font-weight: 900;
+  /* color: var(--font-clr-main); */
   margin-top: 35px;
-  text-shadow: 6px 2px 10px black;
   user-select: none;
 }
 .book-list {
@@ -56,32 +55,120 @@ ul {
   grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
   grid-template-rows: auto;
   font-size: var(--main-font-size);
+  padding: 20px;
   height: 35px;
 }
 li {
   width: 100%;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px dashed black;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-book {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  height: 40px;
+  width: 150px;
+  border-radius: 2rem;
+  border: 1px solid gray;
+  border: 1px dashed black;
+  background-color: white;
+  color: black;
+  font-family: "copystruct";
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+.add-book:hover,
+.add-book-button:hover,
+.rest-book-form:hover {
+  background-color: black;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+.add-book:active,
+.add-book-button:active,
+.rest-book-form:active {
+  transform: scale(0.9);
+  transition: 0.1s ease-in-out;
 }
 
-.book-form {
-  background-color: var(--form-background-clr);
+.book-form-pop {
   padding: 30px;
-  display: flex;
   flex-direction: column;
   justify-self: center;
   position: absolute;
-  top: 300px;
+  top: 0;
   gap: 30px;
   border-radius: 10px;
-  /* display: none; */
+}
+.book-form-pop::backdrop {
+  background: rgb(0 0 0 / 0.5);
+  opacity: 0;
+}
+.book-form-pop[open]::backdrop {
+  animation: fade-in 0.2s forwards;
+}
+.book-form-pop[open] {
+  animation: fade-in var(--animation-duration) forwards;
+}
+.book-form-pop[closing] {
+  display: block;
+  inset: 0;
+  pointer-events: none;
+  animation: fade-out var(--animation-duration) forwards;
+}
+.book-form-pop[closing]::backdrop {
+  animation: fade-out 0.2s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+input {
+  border: none;
+  font-family: "copystruct";
+  border-bottom: 1px dashed gray;
+  text-align: center;
+}
+input:focus {
+  border-bottom: 1px dashed gray;
+  outline: none;
+  text-align: center;
 }
 .input-window {
   display: flex;
   justify-content: space-between;
   font-size: var(--form-font-size);
-  font-weight: 800;
 }
 input {
   width: 50%;
@@ -99,10 +186,24 @@ input {
   top: 8px;
   cursor: pointer;
 }
-.read-of-book-display {
-  height: 10px;
-  width: 10px;
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
+.add-book-button,
+.rest-book-form {
+  background-color: white;
+  border: 1px dashed gray;
+  border-radius: 2rem;
+  height: 40px;
+  width: 60px;
+  font-family: "copystruct";
+  font-size: 0.8rem;
+  cursor: pointer;
+  user-select: none;
+}
+
 li > * {
   height: 15px;
 }
@@ -110,4 +211,9 @@ li > * {
 .book-content > * {
   display: grid;
   grid-template-columns: 1fr 1fr 0.4fr 0.6fr 0.6fr 0.4fr;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
