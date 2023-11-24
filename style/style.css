@@ -258,3 +258,19 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+footer {
+  position: absolute;
+  bottom: 20px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.github {
+  height: 2.5vh;
+  transition: 0.15s ease-in-out;
+}
+.github:hover {
+  scale: 1.4;
+  transition: 0.15s ease-in-out;
+}
